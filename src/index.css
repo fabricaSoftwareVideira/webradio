@@ -72,6 +72,7 @@ main {
   background: var(--bg-white);
 }
 
+/* Evita scroll e garante iframe fixo */
 .iframe-container iframe {
   position: absolute;
   inset: 0;
@@ -79,13 +80,24 @@ main {
   height: 100%;
   border: 0;
   display: block;
-  overflow: hidden; /* impede rolagem interna */
+  overflow: hidden;
   scrollbar-width: none; /* Firefox */
 }
 
 .iframe-container iframe::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
+  display: none; /* Chrome, Edge, Safari */
 }
+
+/* Garante que o container nunca gere overflow */
+.iframe-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-white);
+}
+
 
 .note {
   margin-top: 0.5rem;
