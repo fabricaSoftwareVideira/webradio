@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  base: process.env.VITE_BASE_URL || '/',
+  base: '/webradio/',
   plugins: [
     react(),
     VitePWA({
@@ -19,17 +19,19 @@ export default defineConfig({
         scope: '/',
         start_url: '/',
         orientation: 'portrait',
+        start_url: '/webradio/',
+        scope: '/webradio/',
         icons: [
           {
-            src: "/icons/icon-192.png",
+            src: "icons/icon-192.webp",
             sizes: "192x192",
-            type: "image/png",
+            type: "image/webp",
             purpose: "any maskable"
           },
           {
-            src: "/icons/icon-512.png",
+            src: "icons/icon-512.webp",
             sizes: "512x512",
-            type: "image/png",
+            type: "image/webp",
             purpose: "any maskable"
           }
         ]
