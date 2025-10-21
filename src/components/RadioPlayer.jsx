@@ -12,6 +12,7 @@ export default function RadioPlayer({ id }) {
                     src={EMBED_URL}
                     width="100%"
                     height="320"
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-presentation"
                     allow="autoplay; encrypted-media"
                     style={{
                         border: 'none',

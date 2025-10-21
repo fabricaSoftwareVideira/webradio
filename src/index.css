@@ -63,10 +63,28 @@ main {
 
 .iframe-container {
   width: 100%;
-  height: 320px;
+  /* usar aspect-ratio quando suportado, fallback com padding-top */
+  aspect-ratio: 16 / 9;
+  position: relative; /* para o iframe posicionado absolutamente */
   border-radius: 12px;
   overflow: hidden;
   /* box-shadow: var(--shadow); */
+  background: var(--bg-white);
+}
+
+.iframe-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  overflow: hidden; /* impede rolagem interna */
+  scrollbar-width: none; /* Firefox */
+}
+
+.iframe-container iframe::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
 }
 
 .note {
@@ -316,7 +334,10 @@ section h2 {
   }
 
   .iframe-container {
-    height: 220px;
+    /* para mobile, manter proporção mas limitar altura máxima */
+    aspect-ratio: 16 / 9;
+    max-height: 320px;
+    overflow: hidden;
   }
 
   .social-link {
