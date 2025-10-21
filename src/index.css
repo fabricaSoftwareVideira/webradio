@@ -1,0 +1,340 @@
+/* ==== Cores base ==== */
+:root {
+  --green-main: #2e8b57;      /* verde principal */
+  --green-light: #a8d5ba;     /* verde claro */
+  --green-dark: #206b43;      /* verde escuro */
+  --bg-light: #f8f9fa;        /* fundo geral */
+  --bg-white: #ffffff;
+  --text-main: #222;
+  --text-muted: #444;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* ==== Estrutura geral ==== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* ==== Cabeçalho ==== */
+header {
+  text-align: center;
+  background: var(--green-main);
+  color: white;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+header p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+/* ==== Conteúdo principal ==== */
+main {
+  max-width: 900px;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+/* ==== Player ==== */
+.radio-player {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.iframe-container {
+  width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* ==== Programação ==== */
+.schedule h2 {
+  text-align: center;
+  color: var(--green-main);
+  margin-bottom: 1rem;
+}
+
+.schedule-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: var(--bg-white);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.6rem;
+  box-shadow: var(--shadow);
+  transition: background 0.2s;
+}
+
+.schedule-item:hover {
+  background: var(--green-light);
+}
+
+.time {
+  font-weight: bold;
+  color: var(--green-dark);
+}
+
+/* ==== Equipe ==== */
+.team {
+  margin-top: 3rem;
+  padding: 1rem;
+}
+
+.team h2 {
+  text-align: center;
+  color: var(--green-main);
+  margin-bottom: 1.5rem;
+}
+
+.team-group {
+  margin-bottom: 2rem;
+}
+
+.team-group h3 {
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.team-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.team-group li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: var(--bg-white);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  box-shadow: var(--shadow);
+  transition: background 0.2s;
+}
+
+.team-group li:hover {
+  background: var(--green-light);
+}
+
+.team-group .emoji {
+  font-size: 1.5rem;
+}
+
+.team-group .info strong {
+  display: block;
+  color: var(--green-main);
+}
+
+.team-group .info p {
+  margin: 0.25rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* ==== Objetivos ==== */
+.objectives {
+  margin-top: 2rem;
+  padding: 1rem 1.2rem;
+  background: var(--bg-white);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.objectives h2 {
+  text-align: center;
+  color: var(--green-main);
+  margin-bottom: 1rem;
+}
+
+.objectives .intro {
+  text-align: justify;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.objective-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.objective-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: var(--bg-light);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s;
+}
+
+.objective-list li:hover {
+  background: var(--green-light);
+}
+
+.objective-list .emoji {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.objective-list p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
+/* ==== História ==== */
+.history {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: var(--bg-white);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.history h2 {
+  text-align: center;
+  color: var(--green-main);
+  margin-bottom: 1rem;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.history-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: var(--bg-light);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s;
+}
+
+.history-list li:hover {
+  background: var(--green-light);
+}
+
+.history-list .emoji {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.history-list p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  text-align: justify;
+}
+
+/* ==== Redes sociais ==== */
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 1.5rem 0;
+  align-items: center;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+  background: var(--bg-white);
+  box-shadow: var(--shadow);
+  color: var(--text-main);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.social-link:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+/* ícones coloridos */
+.social-link[href*="instagram"] .social-icon { color: #E4405F; }
+.social-link[href*="spotify"] .social-icon { color: #1DB954; }
+.social-link[href*="eduplay"] .social-icon { color: var(--green-main); }
+
+.social-icon {
+  width: 26px;
+  height: 26px;
+}
+
+/* ==== Rodapé ==== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #ecf0ec;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 2rem;
+}
+
+/* ==== Responsividade ==== */
+@media (max-width: 600px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+
+  main {
+    padding: 0.5rem;
+  }
+
+  .schedule-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .iframe-container {
+    height: 220px;
+  }
+
+  .social-link {
+    width: 48px;
+    height: 48px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
