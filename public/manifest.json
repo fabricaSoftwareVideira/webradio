@@ -1,0 +1,24 @@
+{
+    "name": "Rádio Web IFC Videira",
+    "short_name": "Rádio IFC",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#1B4332",
+    "theme_color": "#2D6A4F",
+    "orientation": "portrait",
+    "description": "Transmissão ao vivo, podcasts e conteúdos da Rádio Web IFC Videira.",
+    "icons": [
+        {
+            "src": "/icons/icons-small.webp",
+            "sizes": "192x192",
+            "type": "image/webp",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icons/icons-small.webp",
+            "sizes": "512x512",
+            "type": "image/webp",
+            "purpose": "any maskable"
+        }
+    ]
+}

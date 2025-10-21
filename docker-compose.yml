@@ -1,0 +1,13 @@
+services:
+  radio-web:
+    build: .
+    container_name: radio-web
+    restart: always
+    ports:
+      - "8888:80"   # Exponha na porta 8888 (ou outra)
+    networks:
+      - fabrica-network
+
+networks:
+  fabrica-network:
+    external: true
