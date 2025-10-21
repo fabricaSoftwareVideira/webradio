@@ -1,36 +1,58 @@
-import { VitePWA } from 'vite-plugin-pwa';
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), VitePWA({
-    registerType: 'prompt',
-    injectRegister: false,
-
-    pwaAssets: {
-      disabled: false,
-      config: true,
-    },
-
-    manifest: {
-      name: 'webradio',
-      short_name: 'webradio',
-      description: 'WebRadio - IFC Videira',
-      theme_color: '#ffffff',
-    },
-
-    workbox: {
-      globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
-      cleanupOutdatedCaches: true,
-      clientsClaim: true,
-    },
-
-    devOptions: {
-      enabled: false,
-      navigateFallback: 'index.html',
-      suppressWarnings: true,
-      type: 'module',
-    },
-  })],
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
+      manifest: {
+        name: 'Rádio Web IFC Videira',
+        short_name: 'Rádio IFC',
+        description: 'Rádio Web educativa e cultural do Instituto Federal Catarinense - Campus Videira.',
+        theme_color: '#2e8b57',
+        background_color: '#ffffff',
+        display: 'standalone',
+        scope: '/',
+        start_url: '/',
+        orientation: 'portrait',
+        icons: [
+          {
+            src: '/icons/icon-192x192.webp',
+            sizes: '192x192',
+            type: 'image/webp',
+          },
+          {
+            src: '/icons/icon-512x512.webp',
+            sizes: '512x512',
+            type: 'image/webp',
+          }
+        ],
+      },
+      workbox: {
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/eduplay\.rnp\.br\/.*/i,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'eduplay-stream',
+              expiration: {
+                maxEntries: 10,
+                maxAgeSeconds: 24 * 60 * 60,
+              },
+            },
+          },
+          {
+            urlPattern: /\.(?:js|css|html|png|jpg|svg)$/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'static-resources',
+            },
+          },
+        ],
+      },
+    }),
+  ],
 })

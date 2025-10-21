@@ -12,7 +12,7 @@ export default function SocialLinks() {
                 className="social-link"
             >
                 <FaInstagram className="social-icon" />
-                <span className="sr-only">Instagram</span>
+                <span className="sr-only"></span>
             </a>
 
             <a
@@ -23,7 +23,7 @@ export default function SocialLinks() {
                 className="social-link"
             >
                 <FaSpotify className="social-icon" />
-                <span className="sr-only">Spotify</span>
+                <span className="sr-only"></span>
             </a>
 
             <a
@@ -34,7 +34,7 @@ export default function SocialLinks() {
                 className="social-link"
             >
                 <FaBroadcastTower className="social-icon" />
-                <span className="sr-only">Eduplay</span>
+                <span className="sr-only"></span>
             </a>
         </nav>
     )

@@ -6,8 +6,18 @@
   --bg-light: #f8f9fa;        /* fundo geral */
   --bg-white: #ffffff;
   --text-main: #222;
-  --text-muted: #444;
+  --text-muted: #666;
   --shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* ==== Estrutura geral ==== */
@@ -24,7 +34,7 @@ header {
   text-align: center;
   background: var(--green-main);
   color: white;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
 }
 
 h1 {
@@ -56,14 +66,26 @@ main {
   height: 320px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
 }
 
-/* ==== Programação ==== */
-.schedule h2 {
+.note {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+section h2 {
   text-align: center;
   color: var(--green-main);
   margin-bottom: 1rem;
+}
+.schedule {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--bg-white);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
 }
 
 .schedule-list {
@@ -95,14 +117,8 @@ main {
 
 /* ==== Equipe ==== */
 .team {
-  margin-top: 3rem;
-  padding: 1rem;
-}
+  margin-top: 1rem;
 
-.team h2 {
-  text-align: center;
-  color: var(--green-main);
-  margin-bottom: 1.5rem;
 }
 
 .team-group {
@@ -163,12 +179,6 @@ main {
   box-shadow: var(--shadow);
 }
 
-.objectives h2 {
-  text-align: center;
-  color: var(--green-main);
-  margin-bottom: 1rem;
-}
-
 .objectives .intro {
   text-align: justify;
   margin-bottom: 1rem;
@@ -215,12 +225,6 @@ main {
   background: var(--bg-white);
   border-radius: 12px;
   box-shadow: var(--shadow);
-}
-
-.history h2 {
-  text-align: center;
-  color: var(--green-main);
-  margin-bottom: 1rem;
 }
 
 .history-list {
@@ -296,16 +300,6 @@ main {
   height: 26px;
 }
 
-/* ==== Rodapé ==== */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #ecf0ec;
-  font-size: 0.9rem;
-  color: #555;
-  margin-top: 2rem;
-}
-
 /* ==== Responsividade ==== */
 @media (max-width: 600px) {
   header {
@@ -336,5 +330,131 @@ footer {
 
   footer {
     font-size: 0.8rem;
+  }
+}
+
+.install-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: #2e8b57;       /* verde principal */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.install-button:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  background: #24914d;
+}
+
+.install-button:focus {
+  outline: 3px solid rgba(46,139,87,0.3);
+  outline-offset: 3px;
+}
+
+footer {
+  background: #ecf0ec;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-links-footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-links-footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  color: #222;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  transition: transform 0.2s, box-shadow 0.2s, color 0.2s;
+}
+
+.social-links-footer a:hover {
+  transform: translateY(-2px) scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+/* cores por serviço */
+.social-links-footer a:nth-child(1) { color: #E4405F; } /* Instagram Rádio */
+.social-links-footer a:nth-child(2) { color: #1DB954; } /* Spotify */
+.social-links-footer a:nth-child(3) { color: #0077b6; } /* Eduplay */
+.social-links-footer a:nth-child(4) { color: #E4405F; } /* Instagram FSW */
+
+.footer-text {
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #222;
+}
+
+header {
+  text-align: center;
+  background: #2e8b57;
+  color: white;
+  padding: 1.5rem 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+header p {
+  margin: 0.5rem 0 1rem;
+}
+
+/* Menu de navegação */
+.header-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.header-nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .header-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }

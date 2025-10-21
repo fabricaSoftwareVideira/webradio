@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function History() {
+export default function History({ id }) {
     const historyPoints = [
         {
             icon: '🌱',
@@ -17,7 +17,7 @@ export default function History() {
     ]
 
     return (
-        <section className="history">
+        <section className="history" id={id}>
             <h2>📜 História da Rádio</h2>
             <ul className="history-list">
                 {historyPoints.map((item, index) => (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Team() {
+export default function Team({ id }) {
     const teachers = [
         { name: 'Carlos Roberto da Silva', role: 'Coordenador', icon: '👨‍💼' },
         { name: 'Cláudio Bertotto', role: '', icon: '📚' },
@@ -80,7 +80,7 @@ export default function Team() {
     )
 
     return (
-        <section className="team">
+        <section className="team" id={id}>
             <h2>👥 Equipe e Colaboradores</h2>
 
             {renderList('Professores Colaboradores', '🎓', teachers)}

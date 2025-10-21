@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function About() {
+export default function About({ id }) {
     const objectives = [
         {
             icon: '📚',
@@ -29,7 +29,7 @@ export default function About() {
     ]
 
     return (
-        <section className="objectives">
+        <section className="objectives" id={id}>
             <h2>🎯 Objetivos da Rádio Web IFC Videira</h2>
             <p className="intro">
                 A Rádio Web IFC Videira é um projeto de extensão que tem como missão

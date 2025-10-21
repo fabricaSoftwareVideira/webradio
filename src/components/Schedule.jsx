@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Schedule() {
+export default function Schedule({ id }) {
     const shows = [
         { time: '00:00 – 02:00', title: 'Música Internacional Romântica' },
         { time: '02:00 – 04:00', title: 'Sertanejo Romântico' },
@@ -24,7 +24,7 @@ export default function Schedule() {
     ]
 
     return (
-        <section className="schedule">
+        <section className="schedule" id={id}>
             <h2>🎵 Programação Diária</h2>
             <ul className="schedule-list">
                 {shows.map((show, index) => (
